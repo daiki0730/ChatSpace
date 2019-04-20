@@ -1,6 +1,6 @@
 .chatMain__body {
     height: calc(100vh - 15% - 90px);
-    overflow-y: scroll;
+    overflow: scroll;
 
      &--list {
       padding-top: 26px;
