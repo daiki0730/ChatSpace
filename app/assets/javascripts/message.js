@@ -1,12 +1,12 @@
 $(function () {
-  function constructHTML(message) {
+  function constructMessageHTML(message) {
 
     var image_html = "";
-    if (message.image_present) {
-      image_html = `  <img src="${message.image_url}">`;
+    if (message.image["url"]) {
+      image_html = `<img src="${message.image.url}">`;
     }
 
-    var html = `<div class='chatMain__body--list--message'>
+    var html = `<div class='chatMain__body--list--message' data-message-id = "${message.id}">
                   <div class='chatMain__body--list--message--name'>
                     ${message.user_name}
                   </div>
@@ -31,7 +31,7 @@ $(function () {
       contentType: false
     })
     .done(function (message) {
-      var html = constructHTML(message);
+      var html = constructMessageHTML(message);
       $('.chatMain__body--list').append(html)
       $('#messageBody').val('')
       $('.chatMain__body').animate({
