@@ -16,14 +16,12 @@ $(function () {
     $("#chat-group-users").append(html);
   };
 
-  //追加ボタン
   $("#user-search-result").on("click", ".chat-group-user__btn--add", function () {
     var user_name = $(this).data("user-name");
     var user_id = $(this).data("user-id");
     $(this).parent().remove();
     appendChatMenber(user_name, user_id);
   });
-  //削除ボタン
   $("#chat-group-users").on("click", ".js-remove-btn", function () {
     $(this).parent(".js-chat-member").remove()
   });

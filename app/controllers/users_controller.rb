@@ -11,10 +11,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(user_params) #updateできて保存てきた場合
-      redirect_to root_path #root_pathへリダイレクトされる
+    if current_user.update(user_params)
+      redirect_to root_path
     else
-      render :edit  #（失敗した場合）eidtアクションを実行する（再描画する）
+      render :edit
     end
   end
 
